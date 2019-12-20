@@ -34,7 +34,7 @@ const Resources = () => {
       <div style={{}}>
         <BreadCumb title="Resources" />
         <h1 style={{textAlign:'center',margin:20}}>Browse through previous lessons </h1>
-        <ul style={{marginLeft:100}}>
+        <ul style={{marginLeft:'5vw'}}>
         
         {tags?tags.map((item,i)=>{
         return ( <li style={{fontSize:'1.1rem',margin:20}}>{item}
