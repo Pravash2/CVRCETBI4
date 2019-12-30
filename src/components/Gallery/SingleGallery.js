@@ -33,7 +33,11 @@ const SingleGallery = ({ search }) => {
 
   const items = data.allContentfulGallery.edges.filter(
     item => item.node.id === search.id
-  )[0].node
+  )[0]
+    ? data.allContentfulGallery.edges.filter(
+        item => item.node.id === search.id
+      )[0].node
+    : []
   console.log(new Date(items.date).toDateString())
   return (
     <div>
