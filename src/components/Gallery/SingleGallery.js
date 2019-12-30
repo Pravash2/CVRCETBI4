@@ -38,7 +38,7 @@ const SingleGallery = ({ search }) => {
         item => item.node.id === search.id
       )[0].node
     : []
-  console.log(new Date(items.date).toDateString())
+
   return (
     <div>
       <BreadCumb title={items.title} />
@@ -82,7 +82,9 @@ const SingleGallery = ({ search }) => {
 
                   <div className="single-info-box">
                     <h4>Date</h4>
-                    <p>{new Date(items.date).toDateString()}</p>
+                    <p>
+                      {items.date ? new Date(items.date).toDateString() : ""}
+                    </p>
                   </div>
 
                   <div className="single-info-box">
