@@ -179,7 +179,7 @@ export default class Landing extends Component {
         <FunFact />
         {/* 
         <Testimonial />*/}
-        <Gallery />
+        {/* <Gallery /> */}
         <Partner />
         <Blog />
       </div>

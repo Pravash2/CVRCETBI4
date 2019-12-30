@@ -28,7 +28,7 @@ export default class SimpleSlider extends React.Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: this.Responsive(),
+      slidesToShow: 6,
       slidesToScroll: 1,
     }
     return (

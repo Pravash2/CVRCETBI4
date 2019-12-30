@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import BreadCumb from "../BreadCumb";
+import React, { Component } from "react"
+import BreadCumb from "../BreadCumb"
 
 export default class Contact extends Component {
   render() {
@@ -16,10 +16,9 @@ export default class Contact extends Component {
                   </div>
                   <h3>Mail Here</h3>
                   <p>
-                    <a href="#">admin@startp.com</a>
-                  </p>
-                  <p>
-                    <a href="#">info@startp.com</a>
+                    <a href="mailto:incubation_tbi@cvrgi.edu.in">
+                      incubation_tbi@cvrgi.edu.in
+                    </a>
                   </p>
                 </div>
               </div>
@@ -30,8 +29,8 @@ export default class Contact extends Component {
                     <i className="fa fa-map-marker"></i>
                   </div>
                   <h3>Visit Here</h3>
-                  <p>27 Division St, New York, NY 10002, USA</p>
-                  <p>27 Division St, New York, NY 10002, USA</p>
+                  <p>Bidyanagar, Mahura, Janla Bhubaneswar </p>
+                  <p>752054 (Orissa)</p>
                 </div>
               </div>
 
@@ -42,10 +41,10 @@ export default class Contact extends Component {
                   </div>
                   <h3>Call Here</h3>
                   <p>
-                    <a href="#">+123 456 7890</a>
+                    <a href="mobto:9790927896">+91 979 092 7896</a>
                   </p>
                   <p>
-                    <a href="#">+241 452 4526</a>
+                    <a href="mobto:9778751177">+91 977 875 1177 </a>
                   </p>
                 </div>
               </div>
@@ -168,6 +167,6 @@ export default class Contact extends Component {
           </div>
         </section>
       </div>
-    );
+    )
   }
 }

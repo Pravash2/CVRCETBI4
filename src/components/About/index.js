@@ -102,7 +102,7 @@ export default class Landing extends Component {
     return (
       <div style={{}}>
         <About />
-        <Team />
+
         <Partner />
         <FunFact />
       </div>

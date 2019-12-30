@@ -1,127 +1,119 @@
 import React, { Component } from "react"
 import BreadCumb from "../BreadCumb"
+import withLocation from "../withLocation"
+import { Link, useStaticQuery } from "gatsby"
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
+import parse from "html-react-parser"
 
-export default class SingleGallery extends Component {
-  render() {
-    return (
-      <div>
-        <BreadCumb title="SAP Meeting February 28, 2019" />
-        <section className="project-details-area ptb-80">
-          <div className="container">
-            <section class="section">
-              <div class="grid">
-                <div
-                  class="item"
-                  style={{
-                    background:
-                      "https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=",
-                  }}
-                ></div>
-                <div class="item item--large"></div>
-                <div class="item item--medium"></div>
-                <div class="item item--large"></div>
-                <div class="item item--full"></div>
-                <div class="item item--medium"></div>
-                <div class="item item--large"></div>
-                <div class="item"></div>
-                <div class="item item--medium"></div>
-                <div class="item item--large"></div>
-                <div class="item"></div>
-                <div class="item item--medium"></div>
-                <div class="item item--medium"></div>
-                <div class="item item--large"></div>
-                <div class="item"></div>
-              </div>
-            </section>
-            <div className="row">
-              <div className="col-lg-12 col-md-12">
-                <div className="project-details-desc">
-                  <h3>Network Marketing</h3>
+const SingleGallery = ({ search }) => {
+  const data = useStaticQuery(graphql`
+    query MyQueryss {
+      allContentfulGallery {
+        edges {
+          node {
+            id
+            date
+            category
+            eventsImages {
+              file {
+                url
+              }
+              title
+            }
+            title
+            description {
+              json
+            }
+            updatedAt(formatString: "")
+          }
+        }
+      }
+    }
+  `)
 
-                  <p>
-                    Lorem ipsum dolor sit amet, conse cte tuer adipiscing elit,
-                    sed diam no nu m nibhie eui smod. Facil isis atve eros et
-                    accumsan etiu sto odi dignis sim qui blandit praesen lup ta
-                    de er. At molestiae appellantur pro. Vis wisi oportere per
-                    ic ula ad, ei latine prop riae na, mea cu purto debitis.
-                    Primis nost rud no eos, no impedit dissenti as mea, ea vide
-                    labor amus neglegentur vix. Ancillae intellegat vix et. Sit
-                    causae laoreet nolu ise. Ad po exerci nusquam eos te. Cu
-                    altera expet enda qui, munere oblique theo phrastu ea vix.
-                    Ne nec modus civibus modera tius, sit ei lorem doctus. Ne
-                    docen di verterem reformidans eos. Cu altera expetenda qui,
-                    munere oblique theophr astus ea vix modus civiu mod eratius.
-                  </p>
+  const items = data.allContentfulGallery.edges.filter(
+    item => item.node.id === search.id
+  )[0].node
+  console.log(new Date(items.date).toDateString())
+  return (
+    <div>
+      <BreadCumb title={items.title} />
+      <section className="project-details-area ptb-80">
+        <div className="container">
+          <section class="section">
+            <div id="gallery">
+              {items.eventsImages
+                ? items.eventsImages.map((item, i) => {
+                    return (
+                      <div>
+                        <img src={`https:${item.file.url}`} />
+                        <Link to={`/singleGallery?id=${item.id}`}>
+                          {item.title}
+                        </Link>
+                      </div>
+                    )
+                  })
+                : ""}
+            </div>
+          </section>
+          <div className="row">
+            <div className="col-lg-12 col-md-12">
+              <div className="project-details-desc">
+                <div style={{ textAlign: "justify" }}>
+                  {parse(documentToHtmlString(items.description.json))}
+                </div>
 
-                  <p>
-                    Lorem ipsum dolor sit amet, conse cte tuer adipiscing elit,
-                    sed diam no nu m nibhie eui smod. Facil isis atve eros et
-                    accumsan etiu sto odi dignis sim qui blandit praesen lup ta
-                    de er. At molestiae appellantur pro. Vis wisi oportere per
-                    ic ula ad, ei latine prop riae na, mea cu purto debitis.
-                    Primis nost rud no eos, no impedit dissenti as mea, ea vide
-                    labor amus neglegentur vix. Ancillae intellegat vix et. Sit
-                    causae laoreet nolu ise. Ad po exerci nusquam eos te. Cu
-                    altera expet enda qui, munere oblique theo phrastu ea vix.
-                    Ne nec modus civibus modera tius, sit ei lorem doctus. Ne
-                    docen di verterem reformidans eos. Cu altera expetenda qui,
-                    munere oblique theophr astus ea vix modus civiu mod eratius.
-                  </p>
+                <div className="project-details-information">
+                  <div className="single-info-box">
+                    <h4>Location</h4>
+                    <p>{items.locations}</p>
+                  </div>
 
-                  <div className="project-details-information">
-                    <div className="single-info-box">
-                      <h4>Happy Client</h4>
-                      <p>John Doe</p>
-                    </div>
+                  <div className="single-info-box">
+                    <h4>Category</h4>
+                    {items.category
+                      ? items.category.map(item => <p>{item}</p>)
+                      : ""}
+                  </div>
 
-                    <div className="single-info-box">
-                      <h4>Category</h4>
-                      <p>Portfolio, Personal</p>
-                    </div>
+                  <div className="single-info-box">
+                    <h4>Date</h4>
+                    <p>{new Date(items.date).toDateString()}</p>
+                  </div>
 
-                    <div className="single-info-box">
-                      <h4>Date</h4>
-                      <p>February 28, 2019</p>
-                    </div>
-
-                    <div className="single-info-box">
-                      <h4>Share</h4>
-                      <ul>
-                        <li>
-                          <a href="#">
-                            <i data-feather="facebook"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i data-feather="twitter"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i data-feather="instagram"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i data-feather="linkedin"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="single-info-box">
-                      <a href="#" className="btn btn-primary">
-                        Live Preview
-                      </a>
-                    </div>
+                  <div className="single-info-box">
+                    <h4>Share</h4>
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <i className="fa fa-facebook"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i className="fa fa-twitter"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i className="fa fa-instagram"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i className="fa fa-linkedin"></i>
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-      </div>
-    )
-  }
+        </div>
+      </section>
+    </div>
+  )
 }
+
+export default withLocation(SingleGallery)
