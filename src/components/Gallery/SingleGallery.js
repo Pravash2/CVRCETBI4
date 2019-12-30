@@ -64,7 +64,9 @@ const SingleGallery = ({ search }) => {
             <div className="col-lg-12 col-md-12">
               <div className="project-details-desc">
                 <div style={{ textAlign: "justify" }}>
-                  {parse(documentToHtmlString(items.description.json))}
+                  {items.description
+                    ? parse(documentToHtmlString(items.description.json))
+                    : ""}
                 </div>
 
                 <div className="project-details-information">

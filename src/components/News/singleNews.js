@@ -35,74 +35,74 @@ const SingleGallery = ({ search }) => {
     item => item.id === search.id
   )[0]
 
-  console.log(search.id)
-  return (
-    <div>
-      {/* <BreadCumb title={items.title} /> */}
-      <section className="project-details-area ptb-80">
-        <div>
-          <section className="blog-details-area ptb-80">
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-8 col-md-12 offset-lg-2">
-                  <div className="blog-details">
-                    <div className="article-img">
-                      <img
-                        src={`https:${items.thumbnail.file.url}`}
-                        alt="blog-details"
-                      />
-                      <div className="date">
-                        {new Date(items.createdAt)
-                          .toDateString()
-                          .substring(0, 10)}
-                      </div>
-                    </div>
-
-                    <div className="article-content">
-                      <ul className="category">
-                        {items
-                          ? items.tags.map(item => (
-                              <li>
-                                <a href="#">{item}</a>
-                              </li>
-                            ))
-                          : ""}
-                      </ul>
-
-                      <h3>{items.title}</h3>
-
-                      <div style={{ textAlign: "justify" }}>
-                        {parse(documentToHtmlString(items.description.json))}
+  if (items) {
+    return (
+      <div>
+        <BreadCumb title={items.title} />
+        <section className="project-details-area ptb-80">
+          <div>
+            <section className="blog-details-area ptb-80">
+              <div className="container">
+                <div className="row">
+                  <div className="col-lg-8 col-md-12 offset-lg-2">
+                    <div className="blog-details">
+                      <div className="article-img">
+                        <img
+                          src={`https:${items.thumbnail.file.url}`}
+                          alt="blog-details"
+                        />
+                        <div className="date">
+                          {new Date(items.createdAt)
+                            .toDateString()
+                            .substring(0, 10)}
+                        </div>
                       </div>
 
-                      <div className="share-post">
-                        <ul>
-                          <li>
-                            <a href="#">
-                              <i className="fa fa-facebook"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i className="fa fa-twitter"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i className="fa fa-instagram"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i className="fa fa-linkedin"></i>
-                            </a>
-                          </li>
+                      <div className="article-content">
+                        <ul className="category">
+                          {items
+                            ? items.tags.map(item => (
+                                <li>
+                                  <a href="#">{item}</a>
+                                </li>
+                              ))
+                            : ""}
                         </ul>
+
+                        <h3>{items.title}</h3>
+
+                        <div style={{ textAlign: "justify" }}>
+                          {parse(documentToHtmlString(items.description.json))}
+                        </div>
+
+                        <div className="share-post">
+                          <ul>
+                            <li>
+                              <a href="#">
+                                <i className="fa fa-facebook"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                <i className="fa fa-twitter"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                <i className="fa fa-instagram"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                <i className="fa fa-linkedin"></i>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* <div className="post-controls-buttons">
+                    {/* <div className="post-controls-buttons">
                     <div className="controls-left">
                       <a href="#">
                         <i data-feather="chevron-left"></i> Prev Post
@@ -115,14 +115,15 @@ const SingleGallery = ({ search }) => {
                       </a>
                     </div>
                   </div> */}
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
-        </div>
-      </section>
-    </div>
-  )
+            </section>
+          </div>
+        </section>
+      </div>
+    )
+  }
 }
 
 export default withLocation(SingleGallery)
