@@ -6,7 +6,7 @@ import "./gallery.css"
 const Gallery = () => {
   const data = useStaticQuery(graphql`
     query MyQuerys {
-      allContentfulGallery {
+      allContentfulGallery(sort: { fields: createdAt, order: ASC }) {
         nodes {
           title
           tumbnailImage {
@@ -26,7 +26,7 @@ const Gallery = () => {
     }
   `)
   const items = data.allContentfulGallery.nodes
-  console.log(items[0])
+
   return (
     <section>
       <BreadCumb title="Gallery" />
