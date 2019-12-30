@@ -41,7 +41,6 @@ const News = () => {
                             <img
                               src={`https:${item.thumbnail.file.url}`}
                               alt="imageBlog"
-                              style={{ width: "400px", height: "280px" }}
                             />
                           </a>
                           <div class="date">

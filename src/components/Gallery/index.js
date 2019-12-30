@@ -30,12 +30,12 @@ const Gallery = () => {
   return (
     <section>
       <BreadCumb title="Gallery" />
-      <section className="container">
+      <section className="container" style={{ marginBottom: 100 }}>
         <div id="gallery">
           {items
             ? items.map((item, i) => {
                 return (
-                  <div>
+                  <div style={{ margin: 10 }}>
                     <img src={`https:${item.tumbnailImage.file.url}`} />
                     <Link to={`/singleGallery?id=${item.id}`}>
                       {item.title}
