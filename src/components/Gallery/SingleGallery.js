@@ -51,9 +51,7 @@ const SingleGallery = ({ search }) => {
                       return (
                         <div>
                           <img src={`https:${item.file.url}`} />
-                          <Link to={`/singleGallery?id=${item.id}`}>
-                            {item.title}
-                          </Link>
+                          <a to={`#`}>{item.title}</a>
                         </div>
                       )
                     })
