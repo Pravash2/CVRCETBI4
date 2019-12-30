@@ -177,6 +177,9 @@ body {
   #gallery > div {
     width: 98%;
   }
+  #gallery {
+    height: 150vh;
+  }
   #gallery > div > a {
     font-size: 1rem;
   }
