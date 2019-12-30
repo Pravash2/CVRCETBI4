@@ -5,7 +5,7 @@ import { Link, useStaticQuery } from "gatsby"
 const News = () => {
   const data = useStaticQuery(graphql`
     query MyQueryssssssss {
-      allContentfulNews {
+      allContentfulNews(sort: { fields: createdAt, order: DESC }) {
         nodes {
           id
           title
@@ -22,7 +22,7 @@ const News = () => {
       }
     }
   `)
-  const items = data.allContentfulNews.nodes.reverse().splice(0, 3)
+  const items = data.allContentfulNews.nodes.splice(0, 3)
 
   return (
     <div>
