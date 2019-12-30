@@ -27,10 +27,6 @@ const SingleGallery = ({ search }) => {
     }
   `)
 
-  // const items = data.allContentfulNews.edges.filter(
-  //   item => item.node.id === search.id
-  // )[0].node
-
   const items = data.allContentfulNews.nodes.filter(
     item => item.id === search.id
   )[0]
@@ -123,6 +119,8 @@ const SingleGallery = ({ search }) => {
         </section>
       </div>
     )
+  } else {
+    return <div>Loading</div>
   }
 }
 

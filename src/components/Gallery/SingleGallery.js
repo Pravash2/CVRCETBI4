@@ -38,90 +38,93 @@ const SingleGallery = ({ search }) => {
         item => item.node.id === search.id
       )[0].node
     : []
-
-  return (
-    <div>
-      <BreadCumb title={items.title} />
-      <section className="project-details-area ptb-80">
-        <div className="container">
-          <section class="section">
-            <div id="gallery">
-              {items.eventsImages
-                ? items.eventsImages.map((item, i) => {
-                    return (
-                      <div>
-                        <img src={`https:${item.file.url}`} />
-                        <Link to={`/singleGallery?id=${item.id}`}>
-                          {item.title}
-                        </Link>
-                      </div>
-                    )
-                  })
-                : ""}
-            </div>
-          </section>
-          <div className="row">
-            <div className="col-lg-12 col-md-12">
-              <div className="project-details-desc">
-                <div style={{ textAlign: "justify" }}>
-                  {items.description
-                    ? parse(documentToHtmlString(items.description.json))
-                    : ""}
-                </div>
-
-                <div className="project-details-information">
-                  <div className="single-info-box">
-                    <h4>Location</h4>
-                    <p>{items.locations}</p>
-                  </div>
-
-                  <div className="single-info-box">
-                    <h4>Category</h4>
-                    {items.category
-                      ? items.category.map(item => <p>{item}</p>)
+  if (items) {
+    return (
+      <div>
+        <BreadCumb title={items.title} />
+        <section className="project-details-area ptb-80">
+          <div className="container">
+            <section class="section">
+              <div id="gallery">
+                {items.eventsImages
+                  ? items.eventsImages.map((item, i) => {
+                      return (
+                        <div>
+                          <img src={`https:${item.file.url}`} />
+                          <Link to={`/singleGallery?id=${item.id}`}>
+                            {item.title}
+                          </Link>
+                        </div>
+                      )
+                    })
+                  : ""}
+              </div>
+            </section>
+            <div className="row">
+              <div className="col-lg-12 col-md-12">
+                <div className="project-details-desc">
+                  <div style={{ textAlign: "justify" }}>
+                    {items.description
+                      ? parse(documentToHtmlString(items.description.json))
                       : ""}
                   </div>
 
-                  <div className="single-info-box">
-                    <h4>Date</h4>
-                    <p>
-                      {items.date ? new Date(items.date).toDateString() : ""}
-                    </p>
-                  </div>
+                  <div className="project-details-information">
+                    <div className="single-info-box">
+                      <h4>Location</h4>
+                      <p>{items.locations}</p>
+                    </div>
 
-                  <div className="single-info-box">
-                    <h4>Share</h4>
-                    <ul>
-                      <li>
-                        <a href="#">
-                          <i className="fa fa-facebook"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="fa fa-twitter"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="fa fa-instagram"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="fa fa-linkedin"></i>
-                        </a>
-                      </li>
-                    </ul>
+                    <div className="single-info-box">
+                      <h4>Category</h4>
+                      {items.category
+                        ? items.category.map(item => <p>{item}</p>)
+                        : ""}
+                    </div>
+
+                    <div className="single-info-box">
+                      <h4>Date</h4>
+                      <p>
+                        {items.date ? new Date(items.date).toDateString() : ""}
+                      </p>
+                    </div>
+
+                    <div className="single-info-box">
+                      <h4>Share</h4>
+                      <ul>
+                        <li>
+                          <a href="#">
+                            <i className="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i className="fa fa-twitter"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i className="fa fa-instagram"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i className="fa fa-linkedin"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
-  )
+        </section>
+      </div>
+    )
+  } else {
+    return <div>Hello</div>
+  }
 }
 
 export default withLocation(SingleGallery)
