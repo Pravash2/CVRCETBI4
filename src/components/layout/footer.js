@@ -35,16 +35,16 @@ class Footer extends React.Component {
                       <Link to="/about">About Us</Link>
                     </li>
                     <li>
-                      <Link href="/resources">Resources</Link>
+                      <Link to="/resources">Resources</Link>
                     </li>
                     <li>
-                      <Link href="/gallery">Gallery</Link>
+                      <Link to="/gallery">Gallery</Link>
                     </li>
                     <li>
-                      <Link href="/news">Latest News</Link>
+                      <Link to="/news">Latest News</Link>
                     </li>
                     <li>
-                      <Link href="/contact">Contact us</Link>
+                      <Link tos="/contact">Contact us</Link>
                     </li>
                   </ul>
                 </div>
