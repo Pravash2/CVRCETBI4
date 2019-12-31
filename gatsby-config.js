@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `CVRCE - Technology Business Incubator`,
+    description: `We are a technology business incubator based in ODISHA supporting and nurturing startup companies by providing services such as incubation, modern office spaces, mentoring , networking opportunities, and rapid prototyping. We are CVRCE- Technology Business Incubator founded in 2019, a non-profit organization with an integral role in catalyzing the entrepreneurial movement in India. By supporting entrepreneurs and start-up ideas, we will highlight India's reputation as a destination for Entrepreneurship and Innovation. We will be India's most sought after Technology Business Incubator committed to growing a collaborative entrepreneurial network byd providing a one-stop support system for start-ups and transforming Orissa as a hub for innovation.`,
+    author: `@pravash`,
+    keyword: `cvrce,cvrce tbi, technology business incubator in odisha, best incubator in bhubaneswar, best incubator in odisha, c v raman incubator, incubator in odisha, c v raman tbi, startups in odisha, student startups in odisha, startups in c v raman college,  `,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,7 +25,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon-32x32.png`, // This path is relative to the root of the site.
       },
     },
     {

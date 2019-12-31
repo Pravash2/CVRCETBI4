@@ -10,13 +10,13 @@ var window = require("global/window")
 const Header = ({ siteTitle }) => (
   <header id="header">
     <nav className="navbar navbar-expand-lg navbar-light">
-      <a className="navbar-brand" href="#">
+      <Link className="navbar-brand" to="/">
         <img
           style={{ width: "200px" }}
           src={require("../../assets/img/logo.png")}
           alt="logo"
         />
-      </a>
+      </Link>
       <button
         className="navbar-toggler"
         type="button"

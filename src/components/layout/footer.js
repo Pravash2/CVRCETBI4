@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 class Footer extends React.Component {
   render() {
@@ -31,19 +32,19 @@ class Footer extends React.Component {
                   <h3>Company</h3>
                   <ul className="list">
                     <li>
-                      <a href="#">About Us</a>
+                      <Link to="/about">About Us</Link>
                     </li>
                     <li>
-                      <a href="#">Resources</a>
+                      <Link href="/resources">Resources</Link>
                     </li>
                     <li>
-                      <a href="#">Gallery</a>
+                      <Link href="/gallery">Gallery</Link>
                     </li>
                     <li>
-                      <a href="#">Latest News</a>
+                      <Link href="/news">Latest News</Link>
                     </li>
                     <li>
-                      <a href="#">Contact us</a>
+                      <Link href="/contact">Contact us</Link>
                     </li>
                   </ul>
                 </div>
