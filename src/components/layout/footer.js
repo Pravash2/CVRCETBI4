@@ -5,7 +5,7 @@ class Footer extends React.Component {
   render() {
     return (
       <div>
-        <footer className="footer-area bg-f7fafd">
+        <footer style={{ clear: "both" }} className="footer-area bg-f7fafd">
           <div className="container">
             <div className="row">
               <div className="col-lg-3 col-md-6">

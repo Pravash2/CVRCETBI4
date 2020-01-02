@@ -2,7 +2,33 @@ import React, { Component } from "react"
 import BreadCumb from "../BreadCumb"
 
 export default class Contact extends Component {
+  constructor(props) {
+    super(props)
+    this.submitForm = this.submitForm.bind(this)
+    this.state = {
+      status: "",
+    }
+  }
+  submitForm(ev) {
+    ev.preventDefault()
+    const form = ev.target
+    const data = new FormData(form)
+    const xhr = new XMLHttpRequest()
+    xhr.open(form.method, form.action)
+    xhr.setRequestHeader("Accept", "application/json")
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return
+      if (xhr.status === 200) {
+        form.reset()
+        this.setState({ status: "SUCCESS" })
+      } else {
+        this.setState({ status: "ERROR" })
+      }
+    }
+    xhr.send(data)
+  }
   render() {
+    const { status } = this.state
     return (
       <div>
         <BreadCumb title="Contact" />
@@ -72,7 +98,12 @@ export default class Contact extends Component {
                 <img src={require("../../assets/img/1.png")} alt="image" />
               </div>
               <div className="col-lg-6 col-md-12">
-                <form id="contactForm">
+                <form
+                  onSubmit={this.submitForm}
+                  action="https://formspree.io/xpzqbjgr"
+                  method="POST"
+                  id="contactForm"
+                >
                   <div className="row">
                     <div className="col-lg-12 col-md-12">
                       <div className="form-group">
@@ -137,6 +168,7 @@ export default class Contact extends Component {
                     <div className="col-lg-12 col-md-12">
                       <div className="form-group">
                         <textarea
+                          type="text"
                           name="message"
                           className="form-control"
                           id="message"
@@ -151,14 +183,23 @@ export default class Contact extends Component {
                     </div>
 
                     <div className="col-lg-12 col-md-12">
-                      <button type="submit" className="btn btn-primary">
-                        Send Message
-                      </button>
-                      <div
-                        id="msgSubmit"
-                        className="h3 text-center hidden"
-                      ></div>
-                      <div className="clearfix"></div>
+                      {status === "SUCCESS" ? (
+                        <div
+                          id="msgSubmit"
+                          className="h3 success text-center hidden"
+                        >
+                          Thank you !
+                        </div>
+                      ) : (
+                        <button type="submit" className="btn btn-primary">
+                          Send Message
+                        </button>
+                      )}
+                      {status === "ERROR" && (
+                        <div className="clearfix">
+                          Ooops! There was an error
+                        </div>
+                      )}
                     </div>
                   </div>
                 </form>

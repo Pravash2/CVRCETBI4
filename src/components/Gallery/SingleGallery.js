@@ -3,6 +3,7 @@ import BreadCumb from "../BreadCumb"
 import withLocation from "../withLocation"
 import { Link, useStaticQuery } from "gatsby"
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
+
 import parse from "html-react-parser"
 
 const SingleGallery = ({ search }) => {
@@ -45,20 +46,27 @@ const SingleGallery = ({ search }) => {
         <section className="project-details-area ptb-80">
           <div className="container">
             <section class="section">
-              <div id="gallery">
+              <div
+                id="portfolio_grid"
+                class="portfolio-grid5 portfolio-masonry masonry-grid-3"
+              >
                 {items.eventsImages
                   ? items.eventsImages.map((item, i) => {
                       return (
-                        <div>
-                          <img src={`https:${item.file.url}`} />
-                          <a to={`#`}>{item.title}</a>
-                        </div>
+                        <figure class="item" data-groups='["all", "video"]'>
+                          <a>
+                            <img src={`https:${item.file.url}`} />
+                            <div>
+                              <h5 class="name"> {item.title}</h5>
+                            </div>
+                          </a>
+                        </figure>
                       )
                     })
                   : ""}
               </div>
             </section>
-            <div className="row">
+            <div style={{ clear: "both" }} className="row">
               <div className="col-lg-12 col-md-12">
                 <div className="project-details-desc">
                   <div style={{ textAlign: "justify" }}>

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 
 export default class index extends Component {
   render() {
@@ -46,9 +46,9 @@ export default class index extends Component {
                       </div>
                       <h3>Location In Heart of State</h3>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna.
+                        Bhubaneswar is the capital and largest city of the
+                        Indian state of Odisha. It is a center of economic,
+                        educational and cultural importance of East India.
                       </p>
                     </div>
                   </div>
@@ -58,11 +58,10 @@ export default class index extends Component {
                       <div className="icon">
                         <i className="flaticon-rocket"></i>
                       </div>
-                      <h3>Supported by 23 COE's</h3>
+                      <h3>Supported by 27 COE's</h3>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna.
+                        Access to all Center of excellence's including but not
+                        limited to IOT, Welding, Google, Automation, etc.
                       </p>
                     </div>
                   </div>
@@ -74,9 +73,9 @@ export default class index extends Component {
                       </div>
                       <h3>24*7 Co-working Access</h3>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna.
+                        If you take a look at co working options around the
+                        globe, you will notice that a growing number are now
+                        open 24/7, an important feature for many.
                       </p>
                     </div>
                   </div>
@@ -88,9 +87,9 @@ export default class index extends Component {
                       </div>
                       <h3>Vibrant Teams</h3>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna.
+                        We are the foundation of high-performing task-force and
+                        a good team ethically accountable for the success and
+                        smooth running of the organisation.
                       </p>
                     </div>
                   </div>
@@ -100,6 +99,6 @@ export default class index extends Component {
           </div>
         </section>
       </div>
-    );
+    )
   }
 }

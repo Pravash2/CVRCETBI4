@@ -31,7 +31,7 @@ const Gallery = () => {
     <section>
       <BreadCumb title="Gallery" />
       <section className="container" style={{ marginBottom: 100 }}>
-        <div id="gallery">
+        {/* <div id="gallery">
           {items
             ? items.map((item, i) => {
                 return (
@@ -41,6 +41,33 @@ const Gallery = () => {
                       {item.title}
                     </Link>
                   </div>
+                )
+              })
+            : ""}
+        </div> */}
+        <div
+          id="portfolio_grid"
+          class="portfolio-grid5 portfolio-masonry masonry-grid-3"
+        >
+          {items
+            ? items.map((item, i) => {
+                return (
+                  <figure class="item" data-groups='["all", "video"]'>
+                    <Link
+                      to={`/singleGallery?id=${item.id}`}
+                      title="Microsoft Student Partner"
+                      class="lightbox mfp-iframe"
+                    >
+                      <img
+                        src={`https:${item.tumbnailImage.file.url}`}
+                        alt="Microsoft Student Partner"
+                      />
+
+                      <div>
+                        <h5 class="name"> {item.title}</h5>
+                      </div>
+                    </Link>
+                  </figure>
                 )
               })
             : ""}
