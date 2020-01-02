@@ -55,8 +55,11 @@ export default class Contact extends Component {
                     <i className="fa fa-map-marker"></i>
                   </div>
                   <h3>Visit Here</h3>
-                  <p>Bidyanagar, Mahura, Janla Bhubaneswar </p>
-                  <p>752054 (Orissa)</p>
+                  <p>
+                    1st floor, Above central library, C.V Raman college of
+                    engineering.
+                  </p>
+                  <p>Bidyanagar, Mahura, Janla Bhubaneswar,752054 (Orissa)</p>
                 </div>
               </div>
 

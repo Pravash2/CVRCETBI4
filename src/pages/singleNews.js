@@ -8,7 +8,7 @@ import SingleNews from "../components/News/singleNews"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="singlePage" />
+    <SEO title="News" />
     <SingleNews />
   </Layout>
 )

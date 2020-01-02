@@ -40,6 +40,11 @@ const SingleGallery = ({ search }) => {
       )[0].node
     : []
   if (items) {
+    const encodedUrl = encodeURIComponent(
+      `https://cvrcetbi.com/singleGallery?id=${items.id}`
+    )
+    const encodedTitle = encodeURIComponent(items.title)
+    const encodedTags = items.category.join(",")
     return (
       <div>
         <BreadCumb title={items.title} />
@@ -99,22 +104,24 @@ const SingleGallery = ({ search }) => {
                       <h4>Share</h4>
                       <ul>
                         <li>
-                          <a href="#">
+                          <a
+                            href={`https://www.facebook.com/sharer.php?u=${encodedUrl}`}
+                          >
                             <i className="fa fa-facebook"></i>
                           </a>
                         </li>
                         <li>
-                          <a href="#">
+                          <a
+                            href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}&hashtags=${encodedTags}`}
+                          >
                             <i className="fa fa-twitter"></i>
                           </a>
                         </li>
+
                         <li>
-                          <a href="#">
-                            <i className="fa fa-instagram"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
+                          <a
+                            href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}`}
+                          >
                             <i className="fa fa-linkedin"></i>
                           </a>
                         </li>

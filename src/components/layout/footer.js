@@ -44,7 +44,7 @@ class Footer extends React.Component {
                       <Link to="/news">Latest News</Link>
                     </li>
                     <li>
-                      <Link tos="/contact">Contact us</Link>
+                      <Link to="/contact">Contact us</Link>
                     </li>
                   </ul>
                 </div>

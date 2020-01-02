@@ -22,6 +22,9 @@ const SingleGallery = ({ search }) => {
           }
           tags
           id
+          thumbnailtext {
+            thumbnailtext
+          }
         }
       }
     }
@@ -32,6 +35,14 @@ const SingleGallery = ({ search }) => {
   )[0]
 
   if (items) {
+    const encodedUrl = encodeURIComponent(
+      `https://cvrcetbi.com/singleNews?id=${items.id}`
+    )
+    const encodedTitle = encodeURIComponent(items.title)
+    const encodedTags = items.tags.join(",")
+    const encodedSummary = items.thumbnailtext
+      ? encodeURIComponent(items.thumbnailtext.thumbnailtext)
+      : ""
     return (
       <div>
         <BreadCumb title={items.title} />
@@ -74,22 +85,24 @@ const SingleGallery = ({ search }) => {
                         <div className="share-post">
                           <ul>
                             <li>
-                              <a href="#">
+                              <a
+                                href={`https://www.facebook.com/sharer.php?u=${encodedUrl}`}
+                              >
                                 <i className="fa fa-facebook"></i>
                               </a>
                             </li>
                             <li>
-                              <a href="#">
+                              <a
+                                href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}&hashtags=${encodedTags}`}
+                              >
                                 <i className="fa fa-twitter"></i>
                               </a>
                             </li>
+
                             <li>
-                              <a href="#">
-                                <i className="fa fa-instagram"></i>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#">
+                              <a
+                                href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedSummary}`}
+                              >
                                 <i className="fa fa-linkedin"></i>
                               </a>
                             </li>
@@ -97,20 +110,6 @@ const SingleGallery = ({ search }) => {
                         </div>
                       </div>
                     </div>
-
-                    {/* <div className="post-controls-buttons">
-                    <div className="controls-left">
-                      <a href="#">
-                        <i data-feather="chevron-left"></i> Prev Post
-                      </a>
-                    </div>
-
-                    <div className="controls-right">
-                      <a href="#">
-                        Next Post <i data-feather="chevron-right"></i>
-                      </a>
-                    </div>
-                  </div> */}
                   </div>
                 </div>
               </div>
