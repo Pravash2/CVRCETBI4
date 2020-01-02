@@ -44,7 +44,7 @@ const SingleGallery = ({ search }) => {
       `https://cvrcetbi.com/singleGallery?id=${items.id}`
     )
     const encodedTitle = encodeURIComponent(items.title)
-    const encodedTags = items.category.join(",")
+    const encodedTags = items.category ? items.category.join(",") : ""
     return (
       <div>
         <BreadCumb title={items.title} />
