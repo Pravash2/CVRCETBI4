@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 
 export default class index extends Component {
   render() {
@@ -43,7 +43,7 @@ export default class index extends Component {
 
                   <div className="col-lg-6 col-md-6">
                     <div className="box">
-                      <i data-feather="folder"></i> 23 COE's
+                      <i data-feather="folder"></i> 27 COE's
                     </div>
                   </div>
 
@@ -163,6 +163,6 @@ export default class index extends Component {
           </div>
         </section>
       </div>
-    );
+    )
   }
 }
