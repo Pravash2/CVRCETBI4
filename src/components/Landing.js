@@ -23,7 +23,7 @@ class Banner extends Component {
                     <div className="hero-content">
                       <h1>
                         Changing India through transforming ideas into a great
-                        business
+                        Startups
                       </h1>
 
                       <a href="#service-box" className="btn btn-primary">
