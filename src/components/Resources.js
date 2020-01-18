@@ -35,8 +35,8 @@ const Resources = () => {
   console.log(count)
   return (
     <div id="resource" style={{}}>
-      <BreadCumb title="Notices" />
-      <h1 className="heading">Browse through Notices </h1>
+      <BreadCumb title="Resources" />
+      <h1 className="heading">Browse through Resources</h1>
       <ul className="main">
         {tags
           ? tags.map((item, i) => {
