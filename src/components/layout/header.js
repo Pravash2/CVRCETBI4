@@ -54,6 +54,11 @@ const Header = ({ siteTitle }) => (
             </Link>
           </li>
           <li className="nav-item">
+            <Link className="nav-link" to="/notices">
+              Notice
+            </Link>
+          </li>
+          <li className="nav-item">
             <Link className="nav-link" to="/gallery">
               Gallery
             </Link>

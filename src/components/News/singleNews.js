@@ -39,7 +39,7 @@ const SingleGallery = ({ search }) => {
       `https://cvrcetbi.com/singleNews?id=${items.id}`
     )
     const encodedTitle = encodeURIComponent(items.title)
-    const encodedTags = items.tags.join(",")
+    const encodedTags = items.tags ? items.tags.join(",") : ""
     const encodedSummary = items.thumbnailtext
       ? encodeURIComponent(items.thumbnailtext.thumbnailtext)
       : ""
@@ -67,7 +67,7 @@ const SingleGallery = ({ search }) => {
 
                       <div className="article-content">
                         <ul className="category">
-                          {items
+                          {items.tags
                             ? items.tags.map(item => (
                                 <li>
                                   <a href="#">{item}</a>

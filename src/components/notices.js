@@ -7,14 +7,14 @@ let tags = []
 
 const Resources = () => {
   const data = useStaticQuery(graphql`
-    query MyQuery {
+    query MyQuery6 {
       allContentfulResources {
         edges {
           node {
+            id
             links
             title
             tags
-            id
           }
         }
       }
@@ -22,6 +22,7 @@ const Resources = () => {
   `)
   const [count, setCount] = useState(-1)
 
+  console.log(data.allContentfulResources.edges)
   data.allContentfulResources.edges.map(d => {
     tags = [...tags, ...d.node.tags]
   })
@@ -35,8 +36,8 @@ const Resources = () => {
   console.log(count)
   return (
     <div id="resource" style={{}}>
-      <BreadCumb title="Notices" />
-      <h1 className="heading">Browse through Notices </h1>
+      <BreadCumb title="Resources" />
+      <h1 className="heading">Browse through lessons </h1>
       <ul className="main">
         {tags
           ? tags.map((item, i) => {
