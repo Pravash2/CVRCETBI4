@@ -39,7 +39,11 @@ const News = () => {
                         <div class="blog-image">
                           <a href="#">
                             <img
-                              src={`https:${item.thumbnail.file.url}`}
+                              src={`https:${
+                                item.thumbnail
+                                  ? item.thumbnail.file.url
+                                  : "//encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTXO0n8PPX7KVYDMnJ6iSBVahJPaBYXKE6NEM71lO73ZkZ23LFe"
+                              }`}
                               alt="imageBlog"
                             />
                           </a>
