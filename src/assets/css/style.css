@@ -186,14 +186,14 @@ h6 {
 
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .btn-primary:not(:disabled):not(.disabled):active:focus,
-.btn-primary .show>.btn-primary.dropdown-toggle:focus {
+.btn-primary .show > .btn-primary.dropdown-toggle:focus {
   -webkit-box-shadow: unset;
   box-shadow: unset;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active,
 .btn-primary:not(:disabled):not(.disabled):active,
-.btn-primary .show>.btn-primary.dropdown-toggle {
+.btn-primary .show > .btn-primary.dropdown-toggle {
   color: #ffffff;
   background: #0e314c;
   -webkit-transform: translateY(-5px);
@@ -621,7 +621,6 @@ Navbar CSS
   z-index: 5;
   padding: 10px 100px 5px 100px !important;
   background: #fff;
-
 }
 
 #header nav .nav-item .more {
@@ -663,7 +662,6 @@ Navbar CSS
   margin-bottom: 15px;
 }
 
-
 @media only screen and (max-width: 600px) {
   #header nav {
     padding: 3px 10px !important;
@@ -682,10 +680,7 @@ Navbar CSS
   #header nav img {
     width: 150px !important;
   }
-
-
 }
-
 
 /*================================================
 Main Banner CSS
@@ -695,7 +690,6 @@ Main Banner CSS
   height: 910px;
   z-index: 1;
   background: transparent url(../img/banner-bg1.jpg) right top no-repeat;
-
 }
 
 .main-banner .hero-content h1 {
@@ -1914,7 +1908,10 @@ Services Details CSS
   margin-bottom: 5px;
 }
 
-.services-details-desc .services-details-accordion .accordion .accordion-item:last-child {
+.services-details-desc
+  .services-details-accordion
+  .accordion
+  .accordion-item:last-child {
   margin-bottom: 0;
 }
 
@@ -1929,7 +1926,11 @@ Services Details CSS
   font-weight: 500;
 }
 
-.services-details-desc .services-details-accordion .accordion .accordion-title i {
+.services-details-desc
+  .services-details-accordion
+  .accordion
+  .accordion-title
+  i {
   position: absolute;
   left: 0;
   top: 0;
@@ -1940,7 +1941,11 @@ Services Details CSS
   color: #ffffff;
 }
 
-.services-details-desc .services-details-accordion .accordion .accordion-title i::before {
+.services-details-desc
+  .services-details-accordion
+  .accordion
+  .accordion-title
+  i::before {
   position: absolute;
   left: 0;
   top: 50%;
@@ -1950,21 +1955,34 @@ Services Details CSS
   font-size: 15px;
 }
 
-.services-details-desc .services-details-accordion .accordion .accordion-title.active {
+.services-details-desc
+  .services-details-accordion
+  .accordion
+  .accordion-title.active {
   border-bottom-color: #e1e1e1;
 }
 
-.services-details-desc .services-details-accordion .accordion .accordion-title.active i::before {
+.services-details-desc
+  .services-details-accordion
+  .accordion
+  .accordion-title.active
+  i::before {
   content: "\f10f";
 }
 
-.services-details-desc .services-details-accordion .accordion .accordion-content {
+.services-details-desc
+  .services-details-accordion
+  .accordion
+  .accordion-content {
   display: none;
   position: relative;
   padding: 15px 15px;
 }
 
-.services-details-desc .services-details-accordion .accordion .accordion-content.show {
+.services-details-desc
+  .services-details-accordion
+  .accordion
+  .accordion-content.show {
   display: block;
 }
 
@@ -2197,7 +2215,10 @@ Features Details CSS
   margin-bottom: 5px;
 }
 
-.features-details-desc .features-details-accordion .accordion .accordion-item:last-child {
+.features-details-desc
+  .features-details-accordion
+  .accordion
+  .accordion-item:last-child {
   margin-bottom: 0;
 }
 
@@ -2212,7 +2233,11 @@ Features Details CSS
   font-weight: 500;
 }
 
-.features-details-desc .features-details-accordion .accordion .accordion-title i {
+.features-details-desc
+  .features-details-accordion
+  .accordion
+  .accordion-title
+  i {
   position: absolute;
   left: 0;
   top: 0;
@@ -2223,7 +2248,11 @@ Features Details CSS
   color: #ffffff;
 }
 
-.features-details-desc .features-details-accordion .accordion .accordion-title i::before {
+.features-details-desc
+  .features-details-accordion
+  .accordion
+  .accordion-title
+  i::before {
   position: absolute;
   left: 0;
   top: 50%;
@@ -2233,21 +2262,34 @@ Features Details CSS
   font-size: 15px;
 }
 
-.features-details-desc .features-details-accordion .accordion .accordion-title.active {
+.features-details-desc
+  .features-details-accordion
+  .accordion
+  .accordion-title.active {
   border-bottom-color: #e1e1e1;
 }
 
-.features-details-desc .features-details-accordion .accordion .accordion-title.active i::before {
+.features-details-desc
+  .features-details-accordion
+  .accordion
+  .accordion-title.active
+  i::before {
   content: "\f10f";
 }
 
-.features-details-desc .features-details-accordion .accordion .accordion-content {
+.features-details-desc
+  .features-details-accordion
+  .accordion
+  .accordion-content {
   display: none;
   position: relative;
   padding: 15px 15px;
 }
 
-.features-details-desc .features-details-accordion .accordion .accordion-content.show {
+.features-details-desc
+  .features-details-accordion
+  .accordion
+  .accordion-content.show {
   display: block;
 }
 
@@ -4046,10 +4088,28 @@ Shop Details CSS
   transition: color 0.2s ease-in-out;
 }
 
-.products-details-tabs .content .products-reviews .star-rating label:hover~label .star,
+.products-details-tabs
+  .content
+  .products-reviews
+  .star-rating
+  label:hover
+  ~ label
+  .star,
 .products-details-tabs .content .products-reviews .star-rating svg.star:hover,
-.products-details-tabs .content .products-reviews .star-rating input[name="star"]:focus~label .star,
-.products-details-tabs .content .products-reviews .star-rating input[name="star"]:checked~label .star {
+.products-details-tabs
+  .content
+  .products-reviews
+  .star-rating
+  input[name="star"]:focus
+  ~ label
+  .star,
+.products-details-tabs
+  .content
+  .products-reviews
+  .star-rating
+  input[name="star"]:checked
+  ~ label
+  .star {
   color: #f2b01e;
 }
 
@@ -4059,19 +4119,34 @@ Shop Details CSS
   padding: 0 0.15rem;
 }
 
-.products-details-tabs .content .products-reviews .star-rating input[name="star"] {
+.products-details-tabs
+  .content
+  .products-reviews
+  .star-rating
+  input[name="star"] {
   display: inline-block;
   width: 0;
   opacity: 0;
   margin-left: -2px;
 }
 
-.products-details-tabs .content .products-reviews .star-rating input[name="star"]:checked+label {
+.products-details-tabs
+  .content
+  .products-reviews
+  .star-rating
+  input[name="star"]:checked
+  + label {
   -webkit-animation: scaleup 1s;
   animation: scaleup 1s;
 }
 
-.products-details-tabs .content .products-reviews .star-rating input[name="star"]:checked+label .star {
+.products-details-tabs
+  .content
+  .products-reviews
+  .star-rating
+  input[name="star"]:checked
+  + label
+  .star {
   -webkit-animation: starred 0.5s;
   animation: starred 0.5s;
 }
@@ -4195,10 +4270,10 @@ Cart CSS
 
 .cart-buttons .btn-light:hover:not(:disabled):not(.disabled).active,
 .cart-buttons .btn-light:hover:not(:disabled):not(.disabled):active,
-.cart-buttons .btn-light:hover .show>.btn-light.dropdown-toggle,
+.cart-buttons .btn-light:hover .show > .btn-light.dropdown-toggle,
 .cart-buttons .btn-light:focus:not(:disabled):not(.disabled).active,
 .cart-buttons .btn-light:focus:not(:disabled):not(.disabled):active,
-.cart-buttons .btn-light:focus .show>.btn-light.dropdown-toggle {
+.cart-buttons .btn-light:focus .show > .btn-light.dropdown-toggle {
   color: #ffffff;
 }
 
@@ -4386,8 +4461,8 @@ Checkout CSS
   display: none;
 }
 
-.order-details .payment-method p [type="radio"]:checked+label,
-.order-details .payment-method p [type="radio"]:not(:checked)+label {
+.order-details .payment-method p [type="radio"]:checked + label,
+.order-details .payment-method p [type="radio"]:not(:checked) + label {
   padding-left: 27px;
   cursor: pointer;
   display: block;
@@ -4397,8 +4472,8 @@ Checkout CSS
   margin-bottom: 8px;
 }
 
-.order-details .payment-method p [type="radio"]:checked+label::before,
-.order-details .payment-method p [type="radio"]:not(:checked)+label::before {
+.order-details .payment-method p [type="radio"]:checked + label::before,
+.order-details .payment-method p [type="radio"]:not(:checked) + label::before {
   content: "";
   position: absolute;
   left: 0;
@@ -4410,8 +4485,8 @@ Checkout CSS
   background: #ffffff;
 }
 
-.order-details .payment-method p [type="radio"]:checked+label::after,
-.order-details .payment-method p [type="radio"]:not(:checked)+label::after {
+.order-details .payment-method p [type="radio"]:checked + label::after,
+.order-details .payment-method p [type="radio"]:not(:checked) + label::after {
   content: "";
   width: 12px;
   height: 12px;
@@ -4424,14 +4499,14 @@ Checkout CSS
   transition: 0.5s;
 }
 
-.order-details .payment-method p [type="radio"]:not(:checked)+label::after {
+.order-details .payment-method p [type="radio"]:not(:checked) + label::after {
   opacity: 0;
   visibility: hidden;
   -webkit-transform: scale(0);
   transform: scale(0);
 }
 
-.order-details .payment-method p [type="radio"]:checked+label::after {
+.order-details .payment-method p [type="radio"]:checked + label::after {
   opacity: 1;
   visibility: visible;
   -webkit-transform: scale(1);
@@ -4908,11 +4983,22 @@ Project Details CSS
   color: #6084a4;
 }
 
-.project-details-desc .project-details-information .single-info-box ul li a svg {
+.project-details-desc
+  .project-details-information
+  .single-info-box
+  ul
+  li
+  a
+  svg {
   width: 18px;
 }
 
-.project-details-desc .project-details-information .single-info-box ul li a:hover {
+.project-details-desc
+  .project-details-information
+  .single-info-box
+  ul
+  li
+  a:hover {
   color: #f47a1f;
   -webkit-transform: translateY(-5px);
   transform: translateY(-5px);
@@ -5803,20 +5889,24 @@ Repair Why Choose Us CSS
   right: 0;
   z-index: -1;
   bottom: 0;
-  background: -webkit-gradient(linear,
-      left top,
-      right bottom,
-      from(#1fa2ff),
-      color-stop(#00c0ff),
-      color-stop(#00d9f2),
-      color-stop(#53eedd),
-      to(#a6ffcb));
-  background: linear-gradient(to right bottom,
-      #1fa2ff,
-      #00c0ff,
-      #00d9f2,
-      #53eedd,
-      #a6ffcb);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right bottom,
+    from(#1fa2ff),
+    color-stop(#00c0ff),
+    color-stop(#00d9f2),
+    color-stop(#53eedd),
+    to(#a6ffcb)
+  );
+  background: linear-gradient(
+    to right bottom,
+    #1fa2ff,
+    #00c0ff,
+    #00d9f2,
+    #53eedd,
+    #a6ffcb
+  );
   border-radius: 50%;
   margin: 6px;
   -webkit-transition: 0.5s;
@@ -6629,3 +6719,16 @@ Go Top CSS
   height: 200px;
   width: 300px;
 } */
+#mentors {
+  margin: 80px auto;
+}
+
+#mentors .single-team .team-content h4 {
+  font-size: 1rem;
+}
+#mentors .single-team .team-content span {
+  font-style: italic;
+}
+#mentors .btn {
+  margin: 10px 20px;
+}

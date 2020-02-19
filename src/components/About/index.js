@@ -6,6 +6,10 @@ import Team from "../Landing/Team"
 
 import BreadCumb from "../BreadCumb"
 
+import Mentors from "./Mentors"
+import StartUps from "./Startup"
+import AdvisoryBoard from "./AdvisoryBoard"
+
 class About extends Component {
   render() {
     return (
@@ -103,8 +107,12 @@ export default class Landing extends Component {
       <div style={{}}>
         <About />
         <Team />
+        <Mentors />
+        {/* <AdvisoryBoard /> */}
+        <StartUps />
         <Partner />
         <FunFact />
+        <StartUps />
       </div>
     )
   }
