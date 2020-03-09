@@ -8,7 +8,7 @@ import BreadCumb from "../BreadCumb"
 
 import Mentors from "./Mentors"
 import StartUps from "./Startup"
-import AdvisoryBoard from "./AdvisoryBoard"
+import FlagshipProgram from "./FlatshipProgram"
 
 class About extends Component {
   render() {
@@ -106,13 +106,13 @@ export default class Landing extends Component {
     return (
       <div style={{}}>
         <About />
+        <FlagshipProgram />
         <Team />
         <Mentors />
         {/* <AdvisoryBoard /> */}
         <StartUps />
         <Partner />
         <FunFact />
-        <StartUps />
       </div>
     )
   }
