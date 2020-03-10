@@ -23,6 +23,7 @@ export default function App() {
           }
           name
           designation
+          url
         }
       }
     }
@@ -71,10 +72,20 @@ export default function App() {
                     />
                   </div>
 
-                  <div className="team-content" style={{ padding: "10px 5px" }}>
+                  <div
+                    className="team-content"
+                    style={{ padding: "10px 15px" }}
+                  >
                     <div className="">
                       <h4>{item.name}</h4>
-                      <span>{item.designation}</span>
+                      <p style={{ textAlign: "justify", fontSize: "0.7rem" }}>
+                        {item.designation}
+                      </p>
+                      <p>
+                        <a target="_blank" href={item.url}>
+                          {item.url}
+                        </a>
+                      </p>
                     </div>
 
                     <ul>
