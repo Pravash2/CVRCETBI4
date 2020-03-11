@@ -63,12 +63,12 @@ export default function App() {
           <Slider>
             {items.map(item => (
               <Slide index={0}>
-                <div className="single-team" style={{ padding: 0 }}>
+                <div className="single-team" style={{ padding: "0 10px" }}>
                   <div className="">
                     <img
                       src={`https:${item.image.file.url}`}
                       alt="teamimage"
-                      style={{ width: "80%" }}
+                      style={{ width: "100%" }}
                     />
                   </div>
 
