@@ -112,7 +112,7 @@ class Footer extends React.Component {
                   <ul className="social-links">
                     <li>
                       <a
-                        href="https://www.facebook.com/cvrcetbi"
+                        href="https://www.facebook.com/cvrcetif"
                         className="facebook"
                         target="_blank"
                       >
@@ -131,7 +131,7 @@ class Footer extends React.Component {
                     <li>
                       <a
                         target="_blank"
-                        href="https://www.instagram.com/cvrcetbi/"
+                        href="https://www.instagram.com/cvrcetif/"
                         className="instagram"
                       >
                         <i className="fa fa-instagram" />

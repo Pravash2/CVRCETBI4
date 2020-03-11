@@ -67,7 +67,7 @@ export default function App() {
                     <img
                       src={`https:${item.image.file.url}`}
                       alt="teamimage"
-                      style={{ width: "80%" }}
+                      className="team-image"
                     />
                   </div>
 

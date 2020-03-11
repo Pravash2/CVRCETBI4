@@ -6,7 +6,6 @@ export default function App() {
       <div className="section-title">
         <h2>Our Flagship Program</h2>
         <div className="bar"></div>
-        <p>Alone we can do so little, together we can do so much</p>
       </div>
       <div class="about-inner-area">
         <div class="row text-justify">
@@ -20,7 +19,15 @@ export default function App() {
                 limit and achieve more heights. Thus, Calling them to showcase
                 their innovative idea and start their own entrepreneurial
                 journey with us. Registrations already live at
-                <a href="https://bit.ly/CVRGI-TBI"> https://bit.ly/CVRGI-TBI</a>
+                <a
+                  className="btn-primary p-1"
+                  target="_blank"
+                  href="https://bit.ly/CVRGI-TBI"
+                  style={{ fontSize: 10, fontFamily: "monospace" }}
+                >
+                  https://bit.ly/CVRGI-TBI
+                </a>
+                .
               </p>
             </div>
           </div>

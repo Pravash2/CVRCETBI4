@@ -18,7 +18,7 @@ export default class index extends Component {
                 <div className="funfact">
                   <h3>
                     <span className="odometer" data-count="180">
-                      03
+                      05
                     </span>
                     +
                   </h3>
